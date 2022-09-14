@@ -1,4 +1,5 @@
 ﻿using System;
+using System.IO;
 using System.Drawing;
 using System.IO.Ports;
 using System.Windows.Forms;
@@ -138,12 +139,62 @@ namespace UartSerialTool
 
         private void Button_Send_Click(object sender, EventArgs e)
         {
-            serialPort.Write(TextBox_ToSend.Text);
+            try
+            {
+                if (CheckBox_SendFile.Checked)
+                {
+                    if (File.Exists(TextBox_FilePath.Text))
+                    {
+                        TextBox_FilePath.Enabled = false;
+                        Color tmpColor = TextBox_FilePath.BackColor;
+                        TextBox_FilePath.BackColor = Color.Red;
+                        StreamReader streamReader = new StreamReader(TextBox_FilePath.Text);
+                        while (!streamReader.EndOfStream)
+                        {
+                            serialPort.Write(streamReader.ReadLine());
+                        }
+                        TextBox_FilePath.Enabled = true;
+                        TextBox_FilePath.BackColor = tmpColor;
+                    }
+                    else
+                    {
+                        MessageBox.Show("File not found.");
+                    }
+                }
+                else
+                {
+                    serialPort.Write(TextBox_ToSend.Text);
+                }
+            }
+            catch (Exception excpt)
+            {
+                MessageBox.Show("Exception: " + excpt.Message + ".");
+            }
         }
 
         private void Button_Clean_Click(object sender, EventArgs e)
         {
             TextBox_Received.Text = "";
+        }
+
+        private void CheckBox_SendFile_CheckedChanged(object sender, EventArgs e)
+        {
+            Button_SearchFile.Enabled = CheckBox_SendFile.Checked;
+            TextBox_FilePath.Enabled = CheckBox_SendFile.Checked;
+            TextBox_ToSend.Enabled = !CheckBox_SendFile.Checked;
+        }
+
+        private void Button_SearchFile_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog openFileDialog = new OpenFileDialog
+            {
+                Title = "Search file to send."
+            };
+            openFileDialog.ShowDialog();
+            if (openFileDialog.FileName != null)
+            {
+                TextBox_FilePath.Text = openFileDialog.FileName;
+            }
         }
     }
 }

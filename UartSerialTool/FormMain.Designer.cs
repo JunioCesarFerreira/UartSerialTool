@@ -30,6 +30,12 @@
         {
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel6 = new System.Windows.Forms.TableLayoutPanel();
+            this.label7 = new System.Windows.Forms.Label();
+            this.panel_receive = new System.Windows.Forms.Panel();
+            this.CheckBox_ShowHexa = new System.Windows.Forms.CheckBox();
+            this.CheckBox_LastFrame = new System.Windows.Forms.CheckBox();
+            this.Button_Clean = new System.Windows.Forms.Button();
+            this.TextBox_Received = new System.Windows.Forms.TextBox();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
             this.label_StatusCOM = new System.Windows.Forms.Label();
@@ -48,24 +54,21 @@
             this.ComboBox_DataBits = new System.Windows.Forms.ComboBox();
             this.ComboBox_StopBits = new System.Windows.Forms.ComboBox();
             this.tableLayoutPanel5 = new System.Windows.Forms.TableLayoutPanel();
-            this.TextBox_ToSend = new System.Windows.Forms.TextBox();
-            this.TextBox_Received = new System.Windows.Forms.TextBox();
-            this.panel_send = new System.Windows.Forms.Panel();
-            this.panel_receive = new System.Windows.Forms.Panel();
             this.label6 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
+            this.panel_send = new System.Windows.Forms.Panel();
             this.Button_Send = new System.Windows.Forms.Button();
-            this.Button_Clean = new System.Windows.Forms.Button();
-            this.CheckBox_LastFrame = new System.Windows.Forms.CheckBox();
-            this.CheckBox_ShowHexa = new System.Windows.Forms.CheckBox();
+            this.TextBox_ToSend = new System.Windows.Forms.TextBox();
+            this.CheckBox_SendFile = new System.Windows.Forms.CheckBox();
+            this.TextBox_FilePath = new System.Windows.Forms.TextBox();
+            this.Button_SearchFile = new System.Windows.Forms.Button();
             this.tableLayoutPanel1.SuspendLayout();
             this.tableLayoutPanel6.SuspendLayout();
+            this.panel_receive.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
             this.tableLayoutPanel3.SuspendLayout();
             this.TableLayoutPanel_SerialSettings.SuspendLayout();
             this.tableLayoutPanel5.SuspendLayout();
             this.panel_send.SuspendLayout();
-            this.panel_receive.SuspendLayout();
             this.SuspendLayout();
             // 
             // tableLayoutPanel1
@@ -105,6 +108,81 @@
             this.tableLayoutPanel6.Size = new System.Drawing.Size(794, 155);
             this.tableLayoutPanel6.TabIndex = 2;
             // 
+            // label7
+            // 
+            this.label7.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Consolas", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.label7.Location = new System.Drawing.Point(4, 1);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(91, 13);
+            this.label7.TabIndex = 7;
+            this.label7.Text = "Data received.";
+            // 
+            // panel_receive
+            // 
+            this.panel_receive.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.panel_receive.Controls.Add(this.CheckBox_ShowHexa);
+            this.panel_receive.Controls.Add(this.CheckBox_LastFrame);
+            this.panel_receive.Controls.Add(this.Button_Clean);
+            this.panel_receive.Location = new System.Drawing.Point(4, 109);
+            this.panel_receive.Name = "panel_receive";
+            this.panel_receive.Size = new System.Drawing.Size(786, 42);
+            this.panel_receive.TabIndex = 2;
+            // 
+            // CheckBox_ShowHexa
+            // 
+            this.CheckBox_ShowHexa.AutoSize = true;
+            this.CheckBox_ShowHexa.Font = new System.Drawing.Font("Consolas", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.CheckBox_ShowHexa.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.CheckBox_ShowHexa.Location = new System.Drawing.Point(137, 13);
+            this.CheckBox_ShowHexa.Name = "CheckBox_ShowHexa";
+            this.CheckBox_ShowHexa.Size = new System.Drawing.Size(170, 17);
+            this.CheckBox_ShowHexa.TabIndex = 8;
+            this.CheckBox_ShowHexa.Text = "Show data in hexadecimal";
+            this.CheckBox_ShowHexa.UseVisualStyleBackColor = true;
+            // 
+            // CheckBox_LastFrame
+            // 
+            this.CheckBox_LastFrame.AutoSize = true;
+            this.CheckBox_LastFrame.Font = new System.Drawing.Font("Consolas", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.CheckBox_LastFrame.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.CheckBox_LastFrame.Location = new System.Drawing.Point(11, 13);
+            this.CheckBox_LastFrame.Name = "CheckBox_LastFrame";
+            this.CheckBox_LastFrame.Size = new System.Drawing.Size(116, 17);
+            this.CheckBox_LastFrame.TabIndex = 7;
+            this.CheckBox_LastFrame.Text = "Only last frame";
+            this.CheckBox_LastFrame.UseVisualStyleBackColor = true;
+            // 
+            // Button_Clean
+            // 
+            this.Button_Clean.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.Button_Clean.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Button_Clean.Font = new System.Drawing.Font("Consolas", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Button_Clean.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.Button_Clean.Location = new System.Drawing.Point(706, 3);
+            this.Button_Clean.Name = "Button_Clean";
+            this.Button_Clean.Size = new System.Drawing.Size(75, 36);
+            this.Button_Clean.TabIndex = 6;
+            this.Button_Clean.Text = "Clean";
+            this.Button_Clean.UseVisualStyleBackColor = true;
+            this.Button_Clean.Click += new System.EventHandler(this.Button_Clean_Click);
+            // 
+            // TextBox_Received
+            // 
+            this.TextBox_Received.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(32)))), ((int)(((byte)(32)))));
+            this.TextBox_Received.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.TextBox_Received.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.TextBox_Received.Font = new System.Drawing.Font("Consolas", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TextBox_Received.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.TextBox_Received.Location = new System.Drawing.Point(4, 18);
+            this.TextBox_Received.Multiline = true;
+            this.TextBox_Received.Name = "TextBox_Received";
+            this.TextBox_Received.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.TextBox_Received.Size = new System.Drawing.Size(786, 84);
+            this.TextBox_Received.TabIndex = 1;
+            // 
             // tableLayoutPanel2
             // 
             this.tableLayoutPanel2.Anchor = System.Windows.Forms.AnchorStyles.None;
@@ -118,7 +196,7 @@
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
             this.tableLayoutPanel2.RowCount = 1;
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 122F));
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 121F));
             this.tableLayoutPanel2.Size = new System.Drawing.Size(697, 122);
             this.tableLayoutPanel2.TabIndex = 0;
             // 
@@ -383,54 +461,6 @@
             this.tableLayoutPanel5.Size = new System.Drawing.Size(794, 155);
             this.tableLayoutPanel5.TabIndex = 1;
             // 
-            // TextBox_ToSend
-            // 
-            this.TextBox_ToSend.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(32)))), ((int)(((byte)(32)))));
-            this.TextBox_ToSend.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.TextBox_ToSend.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.TextBox_ToSend.Font = new System.Drawing.Font("Consolas", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TextBox_ToSend.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            this.TextBox_ToSend.Location = new System.Drawing.Point(4, 18);
-            this.TextBox_ToSend.Multiline = true;
-            this.TextBox_ToSend.Name = "TextBox_ToSend";
-            this.TextBox_ToSend.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.TextBox_ToSend.Size = new System.Drawing.Size(786, 84);
-            this.TextBox_ToSend.TabIndex = 0;
-            // 
-            // TextBox_Received
-            // 
-            this.TextBox_Received.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(32)))), ((int)(((byte)(32)))));
-            this.TextBox_Received.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.TextBox_Received.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.TextBox_Received.Font = new System.Drawing.Font("Consolas", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TextBox_Received.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            this.TextBox_Received.Location = new System.Drawing.Point(4, 18);
-            this.TextBox_Received.Multiline = true;
-            this.TextBox_Received.Name = "TextBox_Received";
-            this.TextBox_Received.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.TextBox_Received.Size = new System.Drawing.Size(786, 84);
-            this.TextBox_Received.TabIndex = 1;
-            // 
-            // panel_send
-            // 
-            this.panel_send.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.panel_send.Controls.Add(this.Button_Send);
-            this.panel_send.Location = new System.Drawing.Point(4, 109);
-            this.panel_send.Name = "panel_send";
-            this.panel_send.Size = new System.Drawing.Size(786, 42);
-            this.panel_send.TabIndex = 1;
-            // 
-            // panel_receive
-            // 
-            this.panel_receive.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.panel_receive.Controls.Add(this.CheckBox_ShowHexa);
-            this.panel_receive.Controls.Add(this.CheckBox_LastFrame);
-            this.panel_receive.Controls.Add(this.Button_Clean);
-            this.panel_receive.Location = new System.Drawing.Point(4, 109);
-            this.panel_receive.Name = "panel_receive";
-            this.panel_receive.Size = new System.Drawing.Size(786, 42);
-            this.panel_receive.TabIndex = 2;
-            // 
             // label6
             // 
             this.label6.Anchor = System.Windows.Forms.AnchorStyles.Left;
@@ -443,17 +473,17 @@
             this.label6.TabIndex = 6;
             this.label6.Text = "Data to be send.";
             // 
-            // label7
+            // panel_send
             // 
-            this.label7.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Consolas", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            this.label7.Location = new System.Drawing.Point(4, 1);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(91, 13);
-            this.label7.TabIndex = 7;
-            this.label7.Text = "Data received.";
+            this.panel_send.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.panel_send.Controls.Add(this.Button_SearchFile);
+            this.panel_send.Controls.Add(this.TextBox_FilePath);
+            this.panel_send.Controls.Add(this.CheckBox_SendFile);
+            this.panel_send.Controls.Add(this.Button_Send);
+            this.panel_send.Location = new System.Drawing.Point(4, 109);
+            this.panel_send.Name = "panel_send";
+            this.panel_send.Size = new System.Drawing.Size(786, 42);
+            this.panel_send.TabIndex = 1;
             // 
             // Button_Send
             // 
@@ -470,43 +500,58 @@
             this.Button_Send.UseVisualStyleBackColor = true;
             this.Button_Send.Click += new System.EventHandler(this.Button_Send_Click);
             // 
-            // Button_Clean
+            // TextBox_ToSend
             // 
-            this.Button_Clean.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.Button_Clean.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.Button_Clean.Font = new System.Drawing.Font("Consolas", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Button_Clean.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            this.Button_Clean.Location = new System.Drawing.Point(706, 3);
-            this.Button_Clean.Name = "Button_Clean";
-            this.Button_Clean.Size = new System.Drawing.Size(75, 36);
-            this.Button_Clean.TabIndex = 6;
-            this.Button_Clean.Text = "Clean";
-            this.Button_Clean.UseVisualStyleBackColor = true;
-            this.Button_Clean.Click += new System.EventHandler(this.Button_Clean_Click);
+            this.TextBox_ToSend.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(32)))), ((int)(((byte)(32)))));
+            this.TextBox_ToSend.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.TextBox_ToSend.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.TextBox_ToSend.Font = new System.Drawing.Font("Consolas", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TextBox_ToSend.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.TextBox_ToSend.Location = new System.Drawing.Point(4, 18);
+            this.TextBox_ToSend.Multiline = true;
+            this.TextBox_ToSend.Name = "TextBox_ToSend";
+            this.TextBox_ToSend.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.TextBox_ToSend.Size = new System.Drawing.Size(786, 84);
+            this.TextBox_ToSend.TabIndex = 0;
             // 
-            // CheckBox_LastFrame
+            // CheckBox_SendFile
             // 
-            this.CheckBox_LastFrame.AutoSize = true;
-            this.CheckBox_LastFrame.Font = new System.Drawing.Font("Consolas", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.CheckBox_LastFrame.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            this.CheckBox_LastFrame.Location = new System.Drawing.Point(11, 13);
-            this.CheckBox_LastFrame.Name = "CheckBox_LastFrame";
-            this.CheckBox_LastFrame.Size = new System.Drawing.Size(116, 17);
-            this.CheckBox_LastFrame.TabIndex = 7;
-            this.CheckBox_LastFrame.Text = "Only last frame";
-            this.CheckBox_LastFrame.UseVisualStyleBackColor = true;
+            this.CheckBox_SendFile.AutoSize = true;
+            this.CheckBox_SendFile.Font = new System.Drawing.Font("Consolas", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.CheckBox_SendFile.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.CheckBox_SendFile.Location = new System.Drawing.Point(11, 14);
+            this.CheckBox_SendFile.Name = "CheckBox_SendFile";
+            this.CheckBox_SendFile.Size = new System.Drawing.Size(86, 17);
+            this.CheckBox_SendFile.TabIndex = 9;
+            this.CheckBox_SendFile.Text = "Send file:";
+            this.CheckBox_SendFile.UseVisualStyleBackColor = true;
+            this.CheckBox_SendFile.CheckedChanged += new System.EventHandler(this.CheckBox_SendFile_CheckedChanged);
             // 
-            // CheckBox_ShowHexa
+            // TextBox_FilePath
             // 
-            this.CheckBox_ShowHexa.AutoSize = true;
-            this.CheckBox_ShowHexa.Font = new System.Drawing.Font("Consolas", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.CheckBox_ShowHexa.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            this.CheckBox_ShowHexa.Location = new System.Drawing.Point(137, 13);
-            this.CheckBox_ShowHexa.Name = "CheckBox_ShowHexa";
-            this.CheckBox_ShowHexa.Size = new System.Drawing.Size(170, 17);
-            this.CheckBox_ShowHexa.TabIndex = 8;
-            this.CheckBox_ShowHexa.Text = "Show data in hexadecimal";
-            this.CheckBox_ShowHexa.UseVisualStyleBackColor = true;
+            this.TextBox_FilePath.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(32)))), ((int)(((byte)(32)))));
+            this.TextBox_FilePath.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.TextBox_FilePath.Font = new System.Drawing.Font("Consolas", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TextBox_FilePath.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.TextBox_FilePath.Location = new System.Drawing.Point(100, 14);
+            this.TextBox_FilePath.Name = "TextBox_FilePath";
+            this.TextBox_FilePath.Size = new System.Drawing.Size(469, 15);
+            this.TextBox_FilePath.TabIndex = 10;
+            // 
+            // Button_SearchFile
+            // 
+            this.Button_SearchFile.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.Button_SearchFile.Enabled = false;
+            this.Button_SearchFile.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Button_SearchFile.Font = new System.Drawing.Font("Consolas", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Button_SearchFile.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.Button_SearchFile.Location = new System.Drawing.Point(575, 3);
+            this.Button_SearchFile.Name = "Button_SearchFile";
+            this.Button_SearchFile.Size = new System.Drawing.Size(75, 36);
+            this.Button_SearchFile.TabIndex = 11;
+            this.Button_SearchFile.Text = "Search";
+            this.Button_SearchFile.UseVisualStyleBackColor = true;
+            this.Button_SearchFile.Click += new System.EventHandler(this.Button_SearchFile_Click);
             // 
             // FormMain
             // 
@@ -523,6 +568,8 @@
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel6.ResumeLayout(false);
             this.tableLayoutPanel6.PerformLayout();
+            this.panel_receive.ResumeLayout(false);
+            this.panel_receive.PerformLayout();
             this.tableLayoutPanel2.ResumeLayout(false);
             this.tableLayoutPanel3.ResumeLayout(false);
             this.tableLayoutPanel3.PerformLayout();
@@ -531,8 +578,7 @@
             this.tableLayoutPanel5.ResumeLayout(false);
             this.tableLayoutPanel5.PerformLayout();
             this.panel_send.ResumeLayout(false);
-            this.panel_receive.ResumeLayout(false);
-            this.panel_receive.PerformLayout();
+            this.panel_send.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -569,6 +615,9 @@
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Panel panel_send;
         private System.Windows.Forms.Button Button_Send;
+        private System.Windows.Forms.Button Button_SearchFile;
+        private System.Windows.Forms.TextBox TextBox_FilePath;
+        private System.Windows.Forms.CheckBox CheckBox_SendFile;
     }
 }
 
