@@ -115,7 +115,7 @@ namespace UartSerialTool
                     portbuild.Parity = (Parity)ComboBox_Parity.SelectedIndex;
                     portbuild.DataBits = Convert.ToInt16(ComboBox_DataBits.Text);
                     portbuild.StopBits = (StopBits)Convert.ToInt16(ComboBox_StopBits.Text);
-                    if (serialPort.CheckCOM(portbuild))
+                    if (serialPort.Check(portbuild))
                     {
                         serialPort.StartListen();
                     }

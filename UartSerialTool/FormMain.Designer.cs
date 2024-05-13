@@ -56,11 +56,11 @@
             this.tableLayoutPanel5 = new System.Windows.Forms.TableLayoutPanel();
             this.label6 = new System.Windows.Forms.Label();
             this.panel_send = new System.Windows.Forms.Panel();
+            this.Button_SearchFile = new System.Windows.Forms.Button();
+            this.TextBox_FilePath = new System.Windows.Forms.TextBox();
+            this.CheckBox_SendFile = new System.Windows.Forms.CheckBox();
             this.Button_Send = new System.Windows.Forms.Button();
             this.TextBox_ToSend = new System.Windows.Forms.TextBox();
-            this.CheckBox_SendFile = new System.Windows.Forms.CheckBox();
-            this.TextBox_FilePath = new System.Windows.Forms.TextBox();
-            this.Button_SearchFile = new System.Windows.Forms.Button();
             this.tableLayoutPanel1.SuspendLayout();
             this.tableLayoutPanel6.SuspendLayout();
             this.panel_receive.SuspendLayout();
@@ -222,7 +222,7 @@
             // 
             // label_StatusCOM
             // 
-            this.label_StatusCOM.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.label_StatusCOM.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.label_StatusCOM.AutoSize = true;
             this.label_StatusCOM.Font = new System.Drawing.Font("Consolas", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label_StatusCOM.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
@@ -231,6 +231,7 @@
             this.label_StatusCOM.Size = new System.Drawing.Size(43, 13);
             this.label_StatusCOM.TabIndex = 5;
             this.label_StatusCOM.Text = "Status";
+            this.label_StatusCOM.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // ComboBox_PortCOM
             // 
@@ -272,13 +273,13 @@
             // 
             // Button_Open
             // 
-            this.Button_Open.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.Button_Open.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.Button_Open.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.Button_Open.Font = new System.Drawing.Font("Consolas", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Button_Open.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
-            this.Button_Open.Location = new System.Drawing.Point(115, 33);
+            this.Button_Open.Location = new System.Drawing.Point(52, 33);
             this.Button_Open.Name = "Button_Open";
-            this.Button_Open.Size = new System.Drawing.Size(75, 23);
+            this.Button_Open.Size = new System.Drawing.Size(138, 23);
             this.Button_Open.TabIndex = 3;
             this.Button_Open.Text = "Open";
             this.Button_Open.UseVisualStyleBackColor = true;
@@ -286,13 +287,13 @@
             // 
             // Button_Close
             // 
-            this.Button_Close.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.Button_Close.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.Button_Close.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.Button_Close.Font = new System.Drawing.Font("Consolas", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Button_Close.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
-            this.Button_Close.Location = new System.Drawing.Point(228, 33);
+            this.Button_Close.Location = new System.Drawing.Point(196, 33);
             this.Button_Close.Name = "Button_Close";
-            this.Button_Close.Size = new System.Drawing.Size(75, 23);
+            this.Button_Close.Size = new System.Drawing.Size(139, 23);
             this.Button_Close.TabIndex = 4;
             this.Button_Close.Text = "Close";
             this.Button_Close.UseVisualStyleBackColor = true;
@@ -485,6 +486,45 @@
             this.panel_send.Size = new System.Drawing.Size(786, 42);
             this.panel_send.TabIndex = 1;
             // 
+            // Button_SearchFile
+            // 
+            this.Button_SearchFile.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.Button_SearchFile.Enabled = false;
+            this.Button_SearchFile.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Button_SearchFile.Font = new System.Drawing.Font("Consolas", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Button_SearchFile.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.Button_SearchFile.Location = new System.Drawing.Point(575, 3);
+            this.Button_SearchFile.Name = "Button_SearchFile";
+            this.Button_SearchFile.Size = new System.Drawing.Size(75, 36);
+            this.Button_SearchFile.TabIndex = 11;
+            this.Button_SearchFile.Text = "Search";
+            this.Button_SearchFile.UseVisualStyleBackColor = true;
+            this.Button_SearchFile.Click += new System.EventHandler(this.Button_SearchFile_Click);
+            // 
+            // TextBox_FilePath
+            // 
+            this.TextBox_FilePath.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(32)))), ((int)(((byte)(32)))));
+            this.TextBox_FilePath.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.TextBox_FilePath.Font = new System.Drawing.Font("Consolas", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TextBox_FilePath.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.TextBox_FilePath.Location = new System.Drawing.Point(100, 14);
+            this.TextBox_FilePath.Name = "TextBox_FilePath";
+            this.TextBox_FilePath.Size = new System.Drawing.Size(469, 15);
+            this.TextBox_FilePath.TabIndex = 10;
+            // 
+            // CheckBox_SendFile
+            // 
+            this.CheckBox_SendFile.AutoSize = true;
+            this.CheckBox_SendFile.Font = new System.Drawing.Font("Consolas", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.CheckBox_SendFile.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.CheckBox_SendFile.Location = new System.Drawing.Point(11, 14);
+            this.CheckBox_SendFile.Name = "CheckBox_SendFile";
+            this.CheckBox_SendFile.Size = new System.Drawing.Size(86, 17);
+            this.CheckBox_SendFile.TabIndex = 9;
+            this.CheckBox_SendFile.Text = "Send file:";
+            this.CheckBox_SendFile.UseVisualStyleBackColor = true;
+            this.CheckBox_SendFile.CheckedChanged += new System.EventHandler(this.CheckBox_SendFile_CheckedChanged);
+            // 
             // Button_Send
             // 
             this.Button_Send.Anchor = System.Windows.Forms.AnchorStyles.Right;
@@ -513,45 +553,6 @@
             this.TextBox_ToSend.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.TextBox_ToSend.Size = new System.Drawing.Size(786, 84);
             this.TextBox_ToSend.TabIndex = 0;
-            // 
-            // CheckBox_SendFile
-            // 
-            this.CheckBox_SendFile.AutoSize = true;
-            this.CheckBox_SendFile.Font = new System.Drawing.Font("Consolas", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.CheckBox_SendFile.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            this.CheckBox_SendFile.Location = new System.Drawing.Point(11, 14);
-            this.CheckBox_SendFile.Name = "CheckBox_SendFile";
-            this.CheckBox_SendFile.Size = new System.Drawing.Size(86, 17);
-            this.CheckBox_SendFile.TabIndex = 9;
-            this.CheckBox_SendFile.Text = "Send file:";
-            this.CheckBox_SendFile.UseVisualStyleBackColor = true;
-            this.CheckBox_SendFile.CheckedChanged += new System.EventHandler(this.CheckBox_SendFile_CheckedChanged);
-            // 
-            // TextBox_FilePath
-            // 
-            this.TextBox_FilePath.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(32)))), ((int)(((byte)(32)))));
-            this.TextBox_FilePath.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.TextBox_FilePath.Font = new System.Drawing.Font("Consolas", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TextBox_FilePath.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            this.TextBox_FilePath.Location = new System.Drawing.Point(100, 14);
-            this.TextBox_FilePath.Name = "TextBox_FilePath";
-            this.TextBox_FilePath.Size = new System.Drawing.Size(469, 15);
-            this.TextBox_FilePath.TabIndex = 10;
-            // 
-            // Button_SearchFile
-            // 
-            this.Button_SearchFile.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.Button_SearchFile.Enabled = false;
-            this.Button_SearchFile.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.Button_SearchFile.Font = new System.Drawing.Font("Consolas", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Button_SearchFile.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            this.Button_SearchFile.Location = new System.Drawing.Point(575, 3);
-            this.Button_SearchFile.Name = "Button_SearchFile";
-            this.Button_SearchFile.Size = new System.Drawing.Size(75, 36);
-            this.Button_SearchFile.TabIndex = 11;
-            this.Button_SearchFile.Text = "Search";
-            this.Button_SearchFile.UseVisualStyleBackColor = true;
-            this.Button_SearchFile.Click += new System.EventHandler(this.Button_SearchFile_Click);
             // 
             // FormMain
             // 

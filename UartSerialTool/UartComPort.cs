@@ -25,18 +25,18 @@ namespace UartSerialTool
             DataReceived?.Invoke(this, args);
         }
 
-        public static void RefreshCOM(ComboBox comboBox_PortCOM)
+        public static void RefreshCOM(ComboBox comboBoxPorts)
         {
             string[] portsNames = SerialPort.GetPortNames();
-            comboBox_PortCOM.Items.Clear();
+            comboBoxPorts.Items.Clear();
             foreach (string portName in portsNames)
             {
-                comboBox_PortCOM.Items.Add(portName);
+                comboBoxPorts.Items.Add(portName);
             }
-            comboBox_PortCOM.Sorted = true;
-            if (comboBox_PortCOM.Items.Count > 0)
+            comboBoxPorts.Sorted = true;
+            if (comboBoxPorts.Items.Count > 0)
             {
-                comboBox_PortCOM.Text = comboBox_PortCOM.Items[0].ToString();
+                comboBoxPorts.Text = comboBoxPorts.Items[0].ToString();
             }
             else
             {
@@ -44,7 +44,7 @@ namespace UartSerialTool
             }
         }
 
-        public bool CheckCOM(SerialPort port)
+        public bool Check(SerialPort port)
         {
             try
             {
@@ -77,13 +77,9 @@ namespace UartSerialTool
             {
                 serialPort.Open();
                 if (serialPort.IsOpen)
-                {
                     serialPort.Write(data, 0, data.Length);
-                }
                 else
-                {
                     throw new Exception("Failed to open the serial port.");
-                }
             }
         }
 
@@ -107,15 +103,13 @@ namespace UartSerialTool
                 while (enableListenThread)
                 {
                     if (!serialPort.IsOpen)
-                    {
                         serialPort.Open();
-                    }
+
                     if (serialPort.BytesToRead > 0)
                     {
                         for (int i = 0; i < serialPort.BytesToRead; i++)
-                        {
                             serialBuffer += (char)serialPort.ReadByte();
-                        }
+
                         EventArgSerialDataReceived arg = new EventArgSerialDataReceived
                         {
                             Data = serialBuffer
