@@ -110,11 +110,11 @@ namespace UartSerialTool
                     SerialPort portbuild = new SerialPort
                     {
                         PortName = ComboBox_PortCOM.Text,
-                        BaudRate = Convert.ToInt16(ComboBox_BaudRate.Text)
+                        BaudRate = int.Parse(ComboBox_BaudRate.Text)
                     };
                     portbuild.Parity = (Parity)ComboBox_Parity.SelectedIndex;
-                    portbuild.DataBits = Convert.ToInt16(ComboBox_DataBits.Text);
-                    portbuild.StopBits = (StopBits)Convert.ToInt16(ComboBox_StopBits.Text);
+                    portbuild.DataBits = int.Parse(ComboBox_DataBits.Text);
+                    portbuild.StopBits = (StopBits)int.Parse(ComboBox_StopBits.Text);
                     if (serialPort.Check(portbuild))
                     {
                         serialPort.StartListen();
